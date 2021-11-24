@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - GitHub Build workflow doesn't run twice on dependabot pull requests
+- Use centralized GitHub Action workflows
 
 ## [1.0.0] - 2021-11-24
 ### Changed
