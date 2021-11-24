@@ -5,5 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.0.0] - 2021-11-24
 ### Changed
 - First release based on mlat-client [#3a8c588](https://github.com/wiedehopf/mlat-client/tree/3a8c588fb1a8c5094005379d861bdb1f7e9e377e)
