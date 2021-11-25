@@ -1,6 +1,8 @@
 # Builder
 FROM python:3.10.0-alpine3.14 AS builder
 
+ARG UPSTREAM_REMOTE
+ARG UPSTREAM_BRANCH
 ARG UPSTREAM_COMMIT
 
 # Packages
@@ -12,8 +14,8 @@ WORKDIR /app
 # Get mlat-client
 RUN mkdir mlat-client && \
     cd mlat-client && \
-    git clone -b master https://github.com/wiedehopf/mlat-client.git . && \
-    git -c advice.detachedHead=false checkout $UPSTREAM_COMMIT && \
+    git clone -b ${UPSTREAM_BRANCH} ${UPSTREAM_REMOTE} . && \
+    git -c advice.detachedHead=false checkout ${UPSTREAM_COMMIT} && \
     mkdir -p /app/python-packages && \
     python3 setup.py install --prefix=/app/python-packages
 
