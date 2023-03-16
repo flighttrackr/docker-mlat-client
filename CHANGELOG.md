@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Update mlat-client to [#eaa95f3](https://github.com/wiedehopf/mlat-client/commit/eaa95f3a4ba7a6429a34142e4befb63edd9f087c)
-- Update Docker base image to `python:3.11-alpine3.17`
+- Update Docker base image to `python:3.10-alpine3.17`
 
 ## [1.0.1] - 2021-11-24
 ### Changed
