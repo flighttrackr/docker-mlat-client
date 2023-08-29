@@ -1,5 +1,5 @@
 # Builder
-FROM python:3.10.12-alpine3.17 AS builder
+FROM python:3.10.13-alpine3.17 AS builder
 
 ARG UPSTREAM_REMOTE
 ARG UPSTREAM_BRANCH
@@ -27,7 +27,7 @@ RUN rm -rf /app/mlat-client/.git*
 
 
 # Release
-FROM python:3.10.12-alpine3.17 AS release
+FROM python:3.10.13-alpine3.17 AS release
 
 # Workdir
 WORKDIR /app
