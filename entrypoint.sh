@@ -17,6 +17,8 @@ SERVER_HOST="${SERVER_HOST:-feed.adsbexchange.com}"
 SERVER_PORT="${SERVER_PORT:-31090}"
 SERVER="${SERVER_HOST}:${SERVER_PORT}"
 NO_UDP="${NO_UDP:-no}"
+UUID_FILE="${UUID_FILE:-}"
+UUID="${UUID:-}"
 LOG_TIMESTAMPS="${LOG_TIMESTAMPS:-no}"
 
 
@@ -55,6 +57,16 @@ fi
 if [ "$NO_UDP" = "yes" ]
 then
     ARGS="${ARGS} --no-udp"
+fi
+
+if [ ! -z "$UUID_FILE" ]
+then
+    ARGS="${ARGS} --uuid-file ${UUID_FILE}"
+fi
+
+if [ ! -z "$UUID" ]
+then
+    ARGS="${ARGS} --uuid ${UUID}"
 fi
 
 if [ "$LOG_TIMESTAMPS" = "yes" ]
