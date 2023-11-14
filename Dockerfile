@@ -1,5 +1,5 @@
 # Builder
-FROM python:3.10.13-alpine3.17 AS builder
+FROM python:3.12.0-alpine3.18 AS builder
 
 ARG UPSTREAM_REMOTE
 ARG UPSTREAM_BRANCH
@@ -27,7 +27,7 @@ RUN rm -rf /app/mlat-client/.git*
 
 
 # Release
-FROM python:3.10.13-alpine3.17 AS release
+FROM python:3.12.0-alpine3.18 AS release
 
 # Workdir
 WORKDIR /app
@@ -41,7 +41,7 @@ COPY --from=builder /app/mlat-client/ /app/
 COPY entrypoint.sh /entrypoint.sh
 
 # Permissions
-RUN chmod +x /entrypoint.sh mlat-client fa-mlat-client && \
+RUN chmod +x /entrypoint.sh mlat-client && \
     mkdir /app/data
 
 # Environment
@@ -59,6 +59,8 @@ ENV INPUT_TYPE="auto" \
     SERVER_HOST="feed.adsbexchange.com" \
     SERVER_PORT="31090" \
     NO_UDP="no" \
+    UUID_FILE="" \
+    UUID="" \
     LOG_TIMESTAMPS="no"
 
 # Entrypoint

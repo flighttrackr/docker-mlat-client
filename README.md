@@ -44,6 +44,8 @@ docker run \
 | SERVER_HOST | x | feed.adsbexchange.com | Host of the multilateration server to connect to |
 | SERVER_PORT | x | 31090 | Port of the multilateration server to connect to |
 | NO_UDP | | no | Don't offer to use UDP transport for sync/mlat messages: `yes`, `no` |
+| UUID_FILE | | | Filepath of a file containing the UUID (has lower priority than `UUID`) |
+| UUID | | | UUID string (has higher priority than `UUID_FILE`) |
 | LOG_TIMESTAMPS | | no | Print timestamps in logging output: `yes`, `no` |
 
 
