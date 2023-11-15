@@ -12,7 +12,7 @@ RUN apk add --no-cache build-base git
 WORKDIR /app
 
 # Environment
-ENV PYTHONPATH="/app/python-packages/lib/python3.10/site-packages"
+ENV PYTHONPATH="/app/python-packages/lib/python3.12/site-packages"
 
 # Get mlat-client
 RUN mkdir mlat-client && \
