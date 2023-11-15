@@ -1,5 +1,5 @@
 # Builder
-FROM python:3.12.0-alpine3.18 AS builder
+FROM python:3.11.6-alpine3.18 AS builder
 
 ARG UPSTREAM_REMOTE
 ARG UPSTREAM_BRANCH
@@ -12,7 +12,7 @@ RUN apk add --no-cache build-base git
 WORKDIR /app
 
 # Environment
-ENV PYTHONPATH="/app/python-packages/lib/python3.12/site-packages"
+ENV PYTHONPATH="/app/python-packages/lib/python3.11/site-packages"
 
 # Get mlat-client
 RUN mkdir mlat-client && \
@@ -27,7 +27,7 @@ RUN rm -rf /app/mlat-client/.git*
 
 
 # Release
-FROM python:3.12.0-alpine3.18 AS release
+FROM python:3.11.6-alpine3.18 AS release
 
 # Workdir
 WORKDIR /app
